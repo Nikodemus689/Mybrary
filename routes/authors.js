@@ -24,6 +24,7 @@ router.get('/', async (req,res) => {
 //New Author Route
 router.get('/new', (req,res) => {
     res.render('authors/new', {author: new Author() })
+    console.log('xd-new')
 })
 
 //Create Author Route
@@ -36,9 +37,11 @@ router.post('/', async (req, res) => {
       const newAuthor = await author.save();
       //res.redirect(`authors/${newAuthor.id}`);
       res.redirect(`/authors`);
+      console.log('xd-post/udalo-sie')
     } catch (err) {
       res.render('authors/new', { author: author, errorMessage: "Error creating Author" });
       console.log('zobacz')
+      console.log('xd-nieudalosie :(')
     }
   });
   
